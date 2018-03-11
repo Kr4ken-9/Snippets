@@ -23,3 +23,26 @@ HASH="$(sha256sum test | head -c 64)"
 
 echo HASH
 ```
+---
+### Get specific process maps (Source ?)
+
+PID = process ID
+
+Search = term to search for
+
+Out = output file
+
+`cat /proc/PID/maps | grep Search > Out`
+
+---
+### [Dump specific process memory](https://serverfault.com/questions/173999/dump-a-linux-processs-memory-to-file)
+
+PID = process id
+
+Out = output file
+
+Begin = Beginning Memory Address
+
+End = Ending Memory Address
+
+`sudo gdb --batch --pid PID -ex "dump memory Out Begin End"`
